@@ -16,20 +16,34 @@ function AppShell() {
   const { isAuthenticated, logout } = useAuth();
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 text-white">
       {isAuthenticated && (
-        <header className="border-b border-slate-800 bg-slate-900/80 backdrop-blur">
-          <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-            <div>
-              <p className="text-sm uppercase tracking-[0.35em] text-cyan-400">Quiz App</p>
-              <h2 className="text-lg font-semibold">Online Quiz</h2>
+        <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-900/70 backdrop-blur-xl shadow-lg">
+          <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+
+            <div className="flex items-center gap-4">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-r from-cyan-500 to-indigo-500 text-xl shadow-lg">
+                🎯
+              </div>
+
+              <div>
+                <p className="text-xs uppercase tracking-[0.45em] text-cyan-300">
+                  Quiz Platform
+                </p>
+
+                <h2 className="text-2xl font-bold bg-gradient-to-r from-cyan-300 to-indigo-300 bg-clip-text text-transparent">
+                  Online Quiz
+                </h2>
+              </div>
             </div>
+
             <button
               onClick={logout}
-              className="rounded-full border border-slate-700 px-4 py-2 text-sm font-semibold text-slate-200 transition hover:border-cyan-400 hover:text-cyan-300"
+              className="rounded-xl border border-red-400/30 bg-red-500/10 px-5 py-2.5 font-semibold text-red-200 transition-all duration-300 hover:-translate-y-0.5 hover:bg-red-500 hover:text-white hover:shadow-lg"
             >
               Logout
             </button>
+
           </div>
         </header>
       )}

@@ -97,14 +97,29 @@ export default function Quiz() {
             <h1 className="text-3xl font-semibold">Question {currentIndex + 1} of {questions.length}</h1>
           </div>
           <div className="rounded-full border border-rose-400/40 bg-rose-500/10 px-4 py-2 font-semibold text-rose-300">
-            Time left: {timeLeft}s
+            <span className="text-lg">⏳</span> {timeLeft}s Left
           </div>
         </div>
 
         {error && <div className="mb-4 rounded-xl border border-rose-500/40 bg-rose-500/10 px-4 py-3 text-sm text-rose-300">{error}</div>}
+        <div className="mb-6">
+          <div className="mb-2 flex justify-between text-sm text-slate-300">
+            <span>Progress</span>
+            <span>{currentIndex + 1} / {questions.length}</span>
+          </div>
 
-        <div className="rounded-2xl border border-slate-700 bg-slate-800/80 p-6">
-          <h2 className="text-xl font-semibold">{currentQuestion.questionText}</h2>
+          <div className="h-3 overflow-hidden rounded-full bg-slate-700">
+            <div
+              className="h-full rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 transition-all duration-500"
+              style={{
+                width: `${((currentIndex + 1) / questions.length) * 100}%`,
+              }}
+            />
+          </div>
+        </div>
+
+        <div className="rounded-3xl border border-white/10 bg-white/10 p-8 backdrop-blur-xl shadow-xl">
+          <h2 className="text-2xl font-bold leading-relaxed">{currentQuestion.questionText}</h2>
           <div className="mt-6 grid gap-3">
             {currentQuestion.options.map((option, index) => {
               const isSelected = selectedAnswer === index;
@@ -112,7 +127,10 @@ export default function Quiz() {
                 <button
                   key={option}
                   onClick={() => handleAnswerSelect(index)}
-                  className={`rounded-xl border px-4 py-3 text-left transition ${isSelected ? 'border-cyan-500 bg-cyan-500/10 text-cyan-200' : 'border-slate-600 bg-slate-900 text-slate-200 hover:border-cyan-400'}`}
+                  className={`rounded-2xl border px-5 py-4 text-left transition-all duration-300 ${isSelected
+                      ? 'border-cyan-400 bg-cyan-500/20 text-cyan-100 shadow-lg'
+                      : 'border-slate-600 bg-slate-900 hover:border-cyan-400 hover:bg-slate-800'
+                    }`}
                 >
                   {option}
                 </button>
