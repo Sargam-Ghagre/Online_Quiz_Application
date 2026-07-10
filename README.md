@@ -57,36 +57,70 @@ MongoDB Database
 
 # Project Structure
 
-```
-Online_QuizApplication/
-│
+## 📂 Project Structure
+
+```text
+Online_Quiz_Application/
 ├── client/
 │   ├── public/
+│   │   └── index.html
+│   │
 │   ├── src/
-│   │   ├── assets/
 │   │   ├── components/
+│   │   │   ├── Footer.js
+│   │   │   └── Navbar.js
+│   │   │
 │   │   ├── context/
-│   │   ├── hooks/
+│   │   │   └── AuthContext.js
+│   │   │
 │   │   ├── pages/
+│   │   │   ├── Home.js
+│   │   │   ├── Instructions.js
+│   │   │   ├── LoginRegister.js
+│   │   │   ├── Quiz.js
+│   │   │   └── Results.js
+│   │   │
 │   │   ├── services/
+│   │   │   └── api.js
+│   │   │
 │   │   ├── App.js
-│   │   └── index.js
-│   └── package.json
+│   │   ├── index.js
+│   │   └── index.css
+│   │
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── tailwind.config.js
+│   └── postcss.config.js
 │
 ├── server/
 │   ├── config/
+│   │   └── db.js
+│   │
 │   ├── controllers/
+│   │   ├── authController.js
+│   │   └── quizController.js
+│   │
 │   ├── middleware/
+│   │   └── authMiddleware.js
+│   │
 │   ├── models/
+│   │   ├── Question.js
+│   │   └── User.js
+│   │
 │   ├── routes/
+│   │   ├── authRoutes.js
+│   │   └── quizRoutes.js
+│   │
 │   ├── utils/
-│   ├── .env
-│   ├── server.js
-│   └── package.json
+│   │   └── seeder.js
+│   │
+│   ├── .env.example
+│   ├── package.json
+│   └── server.js
 │
+├── .gitignore
 └── README.md
 ```
-
 ---
 
 # Installation
