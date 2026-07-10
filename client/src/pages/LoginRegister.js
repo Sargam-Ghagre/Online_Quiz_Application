@@ -60,20 +60,20 @@ export default function LoginRegister() {
             Learn, compete, and improve your skills through interactive quizzes designed for every learner.
           </p>
           <div className="mt-10 space-y-4">
-  {[
-    "📚 50+ Practice Questions",
-    "⏱️ Timed Quiz Experience",
-    "📈 Instant Results",
-    "🏆 Performance Tracking",
-  ].map((item) => (
-    <div
-      key={item}
-      className="rounded-xl bg-white/10 px-4 py-3 backdrop-blur"
-    >
-      {item}
-    </div>
-  ))}
-</div>
+            {[
+              "📚 50+ Practice Questions",
+              "⏱️ Timed Quiz Experience",
+              "📈 Instant Results",
+              "🏆 Performance Tracking",
+            ].map((item) => (
+              <div
+                key={item}
+                className="rounded-xl bg-white/10 px-4 py-3 backdrop-blur"
+              >
+                {item}
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="flex-1 p-8 sm:p-10">
@@ -93,8 +93,12 @@ export default function LoginRegister() {
               Register
             </button>
           </div>
-          
-          <form onSubmit={handleSubmit} className="space-y-4">
+
+          <form
+            onSubmit={handleSubmit}
+            autoComplete="off"
+            className="space-y-4"
+          >
             {mode === 'register' && (
               <div>
                 <label className="mb-1 block text-sm font-medium tracking-wide text-slate-200">Username</label>
@@ -110,10 +114,10 @@ export default function LoginRegister() {
             )}
 
             <div>
-              <label className="mb-1 block text-sm font-medium tracking-wide text-slate-200">Email</label>
               <input
                 name="email"
                 type="email"
+                autoComplete="off"
                 value={formData.email}
                 onChange={handleChange}
                 required
@@ -127,6 +131,7 @@ export default function LoginRegister() {
               <input
                 name="password"
                 type="password"
+                autoComplete="off"
                 value={formData.password}
                 onChange={handleChange}
                 required
