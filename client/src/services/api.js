@@ -1,6 +1,9 @@
 import axios from 'axios';
 
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+// Use an explicit environment variable for deployment. If not provided,
+// default to the currently deployed Render backend so Vercel can work
+// without extra client-side code changes.
+const API_BASE_URL = process.env.REACT_APP_API_URL ?? 'https://online-quiz-application-dy17.onrender.com/api';
 
 const api = axios.create({
   baseURL: API_BASE_URL,

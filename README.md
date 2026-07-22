@@ -40,6 +40,28 @@ Online Quiz Application is a full-stack MERN (MongoDB, Express.js, React.js, Nod
 
 ---
 
+# Vercel Deployment
+
+## Frontend Deploy on Vercel
+
+1. In Vercel, import the GitHub repository.
+2. Set the project root directory to `client`.
+3. Set the build command to `npm run build`.
+4. Set the output directory to `build`.
+5. Add this optional environment variable:
+
+```env
+REACT_APP_API_URL=https://online-quiz-application-dy17.onrender.com/api
+```
+
+## Vercel Notes
+
+- The frontend is configured to use `REACT_APP_API_URL` when provided.
+- If the variable is not set, it falls back to `https://online-quiz-application-dy17.onrender.com/api`.
+- The `client/vercel.json` file is included so Vercel builds the client app properly.
+
+---
+
 # System Architecture
 
 ```text
